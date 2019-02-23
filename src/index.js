@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// Access key via account.API_KEY
+const account = require('./api_key');
+
 // Create a new component. This component should produce some HTML.
 const App = () => {
     return <div>Hi!</div>;
