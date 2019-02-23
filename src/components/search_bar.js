@@ -7,13 +7,14 @@ import React, { Component } from 'react';
 
 // A Class-based component
 class SearchBar extends Component { // gives searchBar extra functionality
-    render() {  // this is how a method on a Class look
-        return <input onChange={this.onInputChange} />
+    constructor(props) {
+        super(props);
+
+        this.state = { searchterm: '' };
     }
 
-    onInputChange() {
 
-    }
+    render() {return <input onChange = { event => console.log(event.target.value) } />}
 }
 
 export default SearchBar;
