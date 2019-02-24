@@ -13,8 +13,13 @@ class SearchBar extends Component { // gives searchBar extra functionality
         this.state = { searchterm: '' };
     }
 
-
-    render() {return <input onChange = { event => console.log(event.target.value) } />}
+    render() {
+        return (
+            <div>
+                <input onChange = { event => this.setState({ searchterm: event.target.value }) } />
+            </div>
+        );
+    }
 }
 
 export default SearchBar;
