@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 
-// A functional component
-// const SearchBar = () => {
-//     return <input/>
-// };
-
 // A Class-based component
 class SearchBar extends Component { // gives searchBar extra functionality
     constructor(props) {
