@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
+import VideoList from './components/video_list';
 
 // Access key via account.API_KEY
 const account = require('./api_key');
@@ -20,7 +21,9 @@ class App extends Component {
     render() {
         return (
             <div>
-                <SearchBar />
+                <SearchBar/>
+                {/*passing prop videos to VideoList*/}
+                <VideoList videos={this.state.videos}/>
             </div>
         );
     }
