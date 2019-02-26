@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
 
 // Access key via account.API_KEY
 const account = require('./api_key');
@@ -13,7 +14,7 @@ class App extends Component {
 
         this.state = { videos: [] };
 
-        YTSearch({key: account.API_KEY, searchterm: 'surfboards'}, (videos) => {
+        YTSearch({key: account.API_KEY, term: 'surfboards'}, (videos) => {
             this.setState({ videos });
         });
     }
@@ -22,6 +23,7 @@ class App extends Component {
         return (
             <div>
                 <SearchBar/>
+                <VideoDetail video={this.state.videos[0]}/>
                 {/*passing prop videos to VideoList*/}
                 <VideoList videos={this.state.videos}/>
             </div>

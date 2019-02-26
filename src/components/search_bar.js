@@ -5,15 +5,15 @@ class SearchBar extends Component { // gives searchBar extra functionality
     constructor(props) {
         super(props);
 
-        this.state = { searchterm: '' };
+        this.state = { term: '' };
     }
 
     render() {
         return (
             <div>
                 <input
-                value = { this.state.searchterm }
-                onChange = { event => this.setState({ searchterm: event.target.value }) } />
+                value = { this.state.term }
+                onChange = { event => this.setState({ term: event.target.value }) } />
             </div>
         );
     }
