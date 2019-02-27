@@ -17,7 +17,11 @@ class App extends Component {
             selectedVideo: null
         };
 
-        YTSearch({key: account.API_KEY, term: 'surfboards'}, (videos) => {
+        this.videoSearch('surfboards'); // to provide some content when first loaded
+    }
+
+    videoSearch(term) {
+        YTSearch({key: account.API_KEY, term: term}, (videos) => {
             this.setState({
                 videos: videos,
                 selectedVideo: videos[0]
@@ -28,7 +32,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <SearchBar/>
+                <SearchBar onSearchTermChange={term => this.videoSearch(term)} />
                 <VideoDetail video={this.state.selectedVideo}/>
                 {/*passing prop videos to VideoList*/}
                 <VideoList
